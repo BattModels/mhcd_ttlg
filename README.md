@@ -18,7 +18,11 @@ The output mat file has a format: `k_data_A_λ_η.mat`
 
 5. `/Eo_var/` folder contains kinetic rates for a range of $\eta$ and $E_{o}$ (formal potential of redox couple wrt electrode).
 
-For Ruthenium Hexamine 
+Formal potential of Ruthenium Hexamine, `E = -0.25 V` vs. Ag/AgCl electrode. 
+
+Formal potential of twisted graphene, `E = -0.18 V` vs. Ag/AgCl electrode [Ref](https://www.nature.com/articles/s41557-021-00865-1). 
+
+Hence `Eo = -0.25 - (-0.18) = -0.07 V` is used for Ruthenium Hexamine. The kinetic rate files are stored in `/Eo_var/_0.07/` folder.
 
 
 
