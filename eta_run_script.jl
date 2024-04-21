@@ -54,11 +54,8 @@ function compute_k_cq(
     E_max = model.dos.E_max,
 )
     V_dl_interp = calculate_Vdl_interp(model.dos.interp_func, Vq_min, Vq_max, C_dl)
-    #Vappl_data, Vdl_data = calculate_Vdl_interp(model.dos.interp_func, Vq_min, Vq_max, C_dl)
-    #v_interp = LinearInterpolation(Vappl_data, Vdl_data)
     V_t = (Eo + η)
     V_dl = V_dl_interp(V_t)
-    #V_dl = v_interp(V_t)
 
     V_q = V_t - V_dl
     #print(V_dl,", ",V_q, ", ",V_t, "\n")
@@ -72,17 +69,6 @@ function compute_k_cq(
     #print(η, ", ",V_q, ", ",E_min,", ", E_max,"\n")
     k_rate = quadgk(integrand(model, ox; kT = kT, η = η, V_q = V_q), E_min, E_max)[1]
     return k_rate, V_q
-end
-
-#Prefactor
-function prefactor(
-    mhcd::MarcusHushChidseyDOS;
-    kT::Real = 0.026,
-    V_q = 0.0,
-)
-    #fd(E) = ox ? 1 .- fermi_dirac(E; kT = kT) : fermi_dirac(E; kT = kT)
-    Ft(E) = (1/4kT).*((sech.(E./2kT)).^2) # Thermal broadening function
-    E -> ((mhcd.dos.interp_func.(E .+ V_q)).^ 1) .* Ft(E)
 end
 
 # Modify string
@@ -141,9 +127,6 @@ for η in η_list
         # Compute rates
         kox_data[i],V_q = compute_k_cq(η, mhcd, true; Eo=-0.07, Vq_min=Vq_min, Vq_max=Vq_max);
         kred_data[i],V_q = compute_k_cq(η, mhcd, false; Eo=-0.07, Vq_min=Vq_min, Vq_max=Vq_max);
-        # Compute prefactor
-        #factor[i] = quadgk(prefactor(mhcd; kT = kT, V_q = V_q), -0.45, 0.45)[1]
-        #print(i,",",V_q,",",factor[i],"\n")
         print(i,",",kox_data[i],",",kred_data[i],"\n")
     end
 
@@ -155,7 +138,6 @@ for η in η_list
     write(file, "kred_list", kred_data)
     write(file, "q12_list", q12_list)
     write(file, "q23_list", q23_list)
-    #write(file, "prefactor", factor)
     close(file)
 end
 

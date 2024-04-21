@@ -1,0 +1,4 @@
+  Activating project at `/ocean/projects/cts180021p/mbabar/PhD/Gerischer`
+  Activating project at `/ocean/projects/cts180021p/mbabar/PhD/Gerischer`
+┌ Warning: Assignment to `file` in soft scope is ambiguous because a global variable by the same name exists: `file` will be treated as a new local. Disambiguate by using `local file` to suppress this warning or `global file` to assign to the existing global variable.
+└ @ /ocean/projects/cts180021p/mbabar/PhD/TTLG/Eo_var/_0.1/eta_run_script.jl:158
