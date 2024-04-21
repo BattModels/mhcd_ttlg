@@ -11,7 +11,7 @@ for specified parameters [$A$]_[$\lambda$]_[$\eta$]
 
 where $\lambda$ = reorganization energy (eV), $\eta$ = applied overpotential (V) and $A$ = proportionality constant for MHC-DOS theory. The output mat file has a format: k_data_[$A$]_[$\lambda$]_[$\eta$].mat
 
-3. `eta_run_script.jl` runs `script.jl` at a range of eta values. The output mat file has a format: k_data_<$A$>_<$\lambda$>_<$\eta$>.mat
+3. `eta_run_script.jl` runs `script.jl` at a range of eta values. The output mat file has a format: k_data_< $A$ >_<$\lambda$>_<$\eta$>.mat
 
 4. `/sweep/` folder contains the .mat DOS files of the tTLG system at a range of theta12 and theta23.
 
