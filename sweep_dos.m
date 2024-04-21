@@ -41,6 +41,8 @@ y = q23_list;
 v = kred_list;
 %v = dos_max;
 
+k_aba = 2.6323040539732973e-5; % Untwisted ABA Bernal stacked eqb. ko 
+
 [xq,yq] = meshgrid(1:.01:5, 1:.01:5);
 
 % Duplicate values
@@ -60,7 +62,7 @@ vq = griddata(ux,uy,uv,xq,yq, 'cubic');
 
 %vq = griddata(x,y,v,xq,yq,'cubic'); % To include duplicate points averaged
 
-surf(xq,yq,(vq+transpose(vq))/2)
+surf(xq,yq,(vq+transpose(vq))/(2*k_aba))
 shading flat
 xlim([1 5])
 ylim([1 5])
