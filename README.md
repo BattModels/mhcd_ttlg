@@ -1,4 +1,4 @@
-# Marcus-Hush-Chidsey DOS rates in twisted Trilayer Graphene system
+# MHCD-tTLG : Marcus-Hush-Chidsey DOS rates in Twisted Trilayer Graphene system
 
 Implement MHC-DOS kinetics from the Julia-based [ElectrochemicalKinetics.jl](https://github.com/BattModels/ElectrochemicalKinetics.jl) package. Needs density of states of the solid as input. We employ the low-energy momentum space model to get DOS for the twisted trilayer graphene system. See code descriptions for instructions for data reproducibility. 
 
