@@ -19,7 +19,7 @@ where $\lambda$ = reorganization energy (eV), $\eta$ = applied overpotential (V)
 The output mat file has a format: `k_data_{A}_λ_{}_η_{}.mat`.
 
 
-4. `/sweep/` folder contains the .mat DOS files of the tTLG system at a range of $\theta_{12}$ and $\theta_{23}$.
+4. `/sweep/` folder contains the .mat DOS files of the tTLG system at a range of $\theta_{12}$ and $\theta_{23}$. See repository [ttlg_dos](https://github.com/mbabar09/ttlg_dos) for data generation instructions. 
 
 5. `/Eo_var/` folder contains kinetic rates for a range of $\eta$ and $E_{o}$ (formal potential of redox couple wrt electrode).
 
