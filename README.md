@@ -2,13 +2,28 @@
 
 Implement MHC-DOS kinetics from the Julia-based [ElectrochemicalKinetics.jl](https://github.com/BattModels/ElectrochemicalKinetics.jl) package. Needs density of states of the solid as input. We employ the low-energy momentum space model to get DOS for the twisted trilayer graphene system. See code descriptions for instructions for data reproducibility. 
 
+## Contact 
+
+Mohammad Babar : mdbabar@umich.edu 
+
 ## Code descriptions
 
 1. `angles.py` takes in DOS data files and outputs `q_dict.mat` with twist angle data. Will be input for `script.jl`
 
 2. `script.jl` main Julia calculation script that outputs `.mat` file with oxidation rates (kox_list), reduction rates (kred_list), $\theta_{12}$ (q12_list) and $\theta_{23}$ (q23_list) variables for specified parameters $A$ , $\lambda$ and $\eta$.
 
-where $\lambda$ = reorganization energy (eV), $\eta$ = applied overpotential (V) and $A$ = proportionality constant for MHC-DOS theory. The output file has a format: `k_data_{A}_λ_{}_η_{}.mat`. Run Julia files with this command:
+where $\lambda$ = reorganization energy (eV), $\eta$ = applied overpotential (V) and $A$ = proportionality constant for MHC-DOS theory. Other input parameters:
+
+i. `C_dl` : EDL capacitance (F)
+ii. `V_dl` : EDL voltage (V)
+iii. `C_q` : Quantum capacitance (F)
+iii. `V_q` : Quantum capacitance voltage (V)
+iv. `Vq_min / Vq_max` : Min/Max range of Quantum capacitance voltage for interpolation 
+v. `kT` : Thermal energy to temperature setting (0.26 eV at 300 K)
+vi. `ef` : Fermi energy of the electrode
+
+
+The output file has a format: `k_data_{A}_λ_{}_η_{}.mat`. Run Julia files with this command:
 
 ```
 > julia script.jl
