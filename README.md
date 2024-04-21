@@ -1,6 +1,6 @@
 # Marcus-Hush-Chidsey DOS rates in twisted Trilayer Graphene system
 
-Implement MHC-DOS kinetics from the Julia-based [ElectrochemicalKinetics.jl](https://github.com/BattModels/ElectrochemicalKinetics.jl) package. Needs density of states of the solid as input. We employ the low-energy momentum space model to get DOS for the twisted trilayer graphene system.  
+Implement MHC-DOS kinetics from the Julia-based [ElectrochemicalKinetics.jl](https://github.com/BattModels/ElectrochemicalKinetics.jl) package. Needs density of states of the solid as input. We employ the low-energy momentum space model to get DOS for the twisted trilayer graphene system. See code descriptions for instructions for data reproducibility. 
 
 ## Code descriptions
 
@@ -28,7 +28,7 @@ Data for Figure 4 in paper is in `/Eo_var/0.3/` at equilibrium `k_data_1.0_λ_0.
 
 6. `sweep_dos.m` uses output `.mat` file to generate colormaps of k $_{red/ox}$ for given $A$ , $\lambda$ and $\eta$.
 
-Specify surface vector `v` in lines 38-42 to either `kox_list` for oxidation rates, `kred_list` for reduction rates and `dos_max` for maximum DOS values shown in SI figure 5.
+Specify surface vector `v` in lines 38-42 to either `kox_list` for oxidation rates, `kred_list` for reduction rates or `dos_max` for maximum DOS values (SI figure 5) as shown below.
 
 ```
 x = q12_list;
