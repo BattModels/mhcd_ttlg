@@ -4,19 +4,27 @@ Implement MHC-DOS kinetics from the Julia-based [ElectrochemicalKinetics.jl](htt
 
 ## Code descriptions
 
-`script.jl` # Outputs a .mat file with kox (kox_list), kred (kred_list), theta12 (q12_list) and theta23 (q23_list) variables
-for given [prefactor]_[lambda]_[eta]
+1. `angles.py` takes in DOS data files and outputs `q_dict.mat` with twist angle data. Will be input for `script.jl`
 
-`eta_run_script.jl` runs script.jl at a range of eta values
+2. `script.jl` outputs `.mat` file with kox (kox_list), kred (kred_list), theta12 (q12_list) and theta23 (q23_list) variables
+for specified parameters [$$A$$]_[$$\lambda$$]_[$$\eta$$]
 
-# The output mat file has a format: k_data_<prefactor>_<lambda>_<eta>.mat
-# where lambda = reorganization energy (eV), eta = applied overpotential (V)
+where $$\lambda$$ = reorganization energy (eV), $$\eta$$ = applied overpotential (V) and $$A$$ = proportionality constant for MHC-DOS theory. The output mat file has a format: k_data_[$$A$$]_[$$\lambda$$]_[$$\eta$$].mat
 
-`/sweep/` folder contains the .mat DOS files of	tTLG system at a range of theta12 and theta23.
+3. `eta_run_script.jl` runs `script.jl` at a range of eta values. The output mat file has a format: k_data_[$$A$$]_[$$\lambda$$]_[$$\eta$$].mat
 
-`sweep_dos.m` uses output .mat file to generate colormaps of k<red/ox> for given <prefactor>_<lambda>_<eta>
+4. `/sweep/` folder contains the .mat DOS files of the tTLG system at a range of theta12 and theta23.
 
-`/Ruhex_data/` folder contains k_data_1.0_0.82_[eta].mat and colormaps(k<ox/red>_<eta>.png) for analyzing MHCD rates of Ruhex with tTLG.
+5. `/Eo_var/` folder contains kinetic rates for a range of $$\eta$$ and $$E_{o}$$ (formal potential of redox couple wrt electrode).
+
+For Ruthenium Hexamine 
+
+
+
+
+`sweep_dos.m` uses output .mat file to generate colormaps of k[red/ox] for given [prefactor]_[lambda]_[eta]
+
+`/Ruhex_data/` folder contains k_data_1.0_0.82_[eta].mat and colormaps(k[ox/red]_[eta].png) for analyzing MHCD rates of Ruhex with tTLG.
 
 
 
