@@ -12,19 +12,19 @@ where $\lambda$ = reorganization energy (eV), $\eta$ = applied overpotential (V)
 
 3. `eta_run_script.jl` runs `script.jl` at a range of eta values. 
 
-The output mat file has a format: `k_data_A_λ_η.mat`
+The output mat file has a format: `k_data_A_λ_{}_η_{}.mat`
 
 4. `/sweep/` folder contains the .mat DOS files of the tTLG system at a range of $\theta_{12}$ and $\theta_{23}$.
 
 5. `/Eo_var/` folder contains kinetic rates for a range of $\eta$ and $E_{o}$ (formal potential of redox couple wrt electrode).
 
-Formal potential of Ruthenium Hexamine, `E = -0.25 V` vs. Ag/AgCl electrode. 
+Formal potential of Ruthenium Hexamine, `E = -0.25 V` vs. Ag/AgCl electrode and reorg. energy `λ=0.82 eV` [Ref](https://www.nature.com/articles/s41557-021-00865-1).
 
 Formal potential of twisted graphene, `E = -0.18 V` vs. Ag/AgCl electrode [Ref](https://www.nature.com/articles/s41557-021-00865-1). 
 
-Hence `Eo = -0.25 - (-0.18) = -0.07 V` is used for Ruthenium Hexamine. The kinetic rate files are stored in `/Eo_var/_0.07/` folder.
+Hence `Eo = -0.25 - (-0.18) = -0.07 V` is used for Ruthenium Hexamine. The kinetic rate files are stored in `/Eo_var/_0.07/` folder. 
 
-
+Data for Figure 4 in paper is in `/Eo_var/0.3/` at equilibrium `k_data_1.0_λ_0.82_η_0.0.mat`.
 
 6. `sweep_dos.m` uses output `.mat` file to generate colormaps of k $_{red/ox}$ for given $A$ , $\lambda$ and $\eta$.
 
