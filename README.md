@@ -25,7 +25,7 @@ For Ruthenium Hexamine
 
 `sweep_dos.m` uses output .mat file to generate colormaps of k $_{red/ox}$ for given $A$ , $\lambda$ and $\eta$.
 
-`/Ruhex_data/` folder contains k_data_1.0_0.82_$eta$.mat and colormaps(k[ox/red]_[eta].png) for analyzing MHCD rates of Ruhex with tTLG.
+`/Ruhex_data/` folder contains k_data_1.0_0.82_ $\eta$.mat and colormaps(k[ox/red]_[eta].png) for analyzing MHCD rates of Ruhex with tTLG.
 
 
 
