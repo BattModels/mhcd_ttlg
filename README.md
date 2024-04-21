@@ -15,12 +15,18 @@ Mohammad Babar : mdbabar@umich.edu
 where $\lambda$ = reorganization energy (eV), $\eta$ = applied overpotential (V) and $A$ = proportionality constant for MHC-DOS theory. Other input parameters:
 
 i. `C_dl` : EDL capacitance (F)
+
 ii. `V_dl` : EDL voltage (V)
+
 iii. `C_q` : Quantum capacitance (F)
-iii. `V_q` : Quantum capacitance voltage (V)
-iv. `Vq_min / Vq_max` : Min/Max range of Quantum capacitance voltage for interpolation 
-v. `kT` : Thermal energy to temperature setting (0.26 eV at 300 K)
-vi. `ef` : Fermi energy of the electrode
+
+iv. `V_q` : Quantum capacitance voltage (V)
+
+v. `Vq_min / Vq_max` : Min/Max range of Quantum capacitance voltage for interpolation 
+
+vi. `kT` : Thermal energy to temperature setting (0.26 eV at 300 K)
+
+vii. `ef` : Fermi energy of the electrode
 
 
 The output file has a format: `k_data_{A}_λ_{}_η_{}.mat`. Run Julia files with this command:
