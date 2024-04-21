@@ -43,7 +43,7 @@ v = kred_list;
 v = dos_max;
 ```
 
-`k_aba = 2.6323040539732973e-5` on line 44 of `sweep_dos.m` is the equilibrium rate constant `ko` for ABA (Bernal) stacked trilayer graphene. It is used as reference for other twist angle rates. For calculation of `k_aba` see repository [trilayer_stacked](https://github.com/mbabar09/trilayer_stacked).
+`k_aba = 2.632e-5` on line 44 of `sweep_dos.m` is the equilibrium rate constant `ko` for ABA (Bernal) stacked trilayer graphene. It is used as reference for other twist angle rates. For calculation of `k_aba` see repository [trilayer_stacked](https://github.com/mbabar09/trilayer_stacked).
 
 
 
