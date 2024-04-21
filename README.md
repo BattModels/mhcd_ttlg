@@ -6,7 +6,7 @@ Implement MHC-DOS kinetics from the Julia-based [ElectrochemicalKinetics.jl](htt
 
 1. `angles.py` takes in DOS data files and outputs `q_dict.mat` with twist angle data. Will be input for `script.jl`
 
-2. `script.jl` outputs `.mat` file with kox (kox_list), kred (kred_list), $\theta_{12}$ (q12_list) and $\theta_{23}$ (q23_list) variables for specified parameters $A$ , $\lambda$ and $\eta$.
+2. `script.jl` main Julia calculation script that outputs `.mat` file with oxidation rates (kox_list), reduction rates (kred_list), $\theta_{12}$ (q12_list) and $\theta_{23}$ (q23_list) variables for specified parameters $A$ , $\lambda$ and $\eta$.
 
 where $\lambda$ = reorganization energy (eV), $\eta$ = applied overpotential (V) and $A$ = proportionality constant for MHC-DOS theory. The output file has a format: `k_data_{A}_λ_{}_η_{}.mat`. Run Julia files with this command:
 
