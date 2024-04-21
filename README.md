@@ -22,7 +22,7 @@ iii. `C_q` : Quantum capacitance (F)
 
 iv. `V_q` : Quantum capacitance voltage (V)
 
-v. `Vq_min / Vq_max` : Min/Max range of Quantum capacitance voltage for interpolation 
+v. `Vq_min / Vq_max` : Min/Max range of Quantum capacitance voltage for interpolation (Eq. 3 in paper)
 
 vi. `kT` : Thermal energy to temperature setting (0.26 eV at 300 K)
 
