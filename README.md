@@ -8,11 +8,11 @@ Implement MHC-DOS kinetics from the Julia-based [ElectrochemicalKinetics.jl](htt
 
 2. `script.jl` outputs `.mat` file with kox (kox_list), kred (kred_list), $\theta_{12}$ (q12_list) and $\theta_{23}$ (q23_list) variables for specified parameters $A$ , $\lambda$ and $\eta$.
 
-where $\lambda$ = reorganization energy (eV), $\eta$ = applied overpotential (V) and $A$ = proportionality constant for MHC-DOS theory. The output file has a format: `k_data_A_λ_{}_η_{}.mat`
+where $\lambda$ = reorganization energy (eV), $\eta$ = applied overpotential (V) and $A$ = proportionality constant for MHC-DOS theory. The output file has a format: `k_data_{A}_λ_{}_η_{}.mat`
 
 3. `eta_run_script.jl` runs `script.jl` at a range of eta values. 
 
-The output mat file has a format: `k_data_A_λ_{}_η_{}.mat`
+The output mat file has a format: `k_data_{A}_λ_{}_η_{}.mat`
 
 4. `/sweep/` folder contains the .mat DOS files of the tTLG system at a range of $\theta_{12}$ and $\theta_{23}$.
 
