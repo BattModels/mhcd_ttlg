@@ -3,9 +3,8 @@
 %load('q_dict.mat')
 % Load k-rate data
 clear all
-cd '/Users/mbabar/Desktop/PhD/Analysis/TTLG'
-load('k_data_1.0_0.82_0.1.mat') % Rates
-%load('pref_0.026_0.07.mat') % Prefactors
+cd '/Users/mbabar/Desktop/PhD/Analysis/MHCD_tTLG'
+load('Eo_var/_0.07/k_data_1.0_?_0.82_?_0.0.mat') % Rates
 
 % Load dos data
 dir0 = 'sweep/';
@@ -38,7 +37,7 @@ end
 
 x = q12_list;
 y = q23_list;
-%v = kox_list.*prefactor.*prefactor;
+%v = kox_list;
 v = kred_list;
 %v = dos_max;
 
@@ -70,29 +69,8 @@ set(gca,'FontName','Times New Roman','FontSize',20,'LineWidth',3,'ytick',1:5,'xt
 xlabel('$\theta_{12}$($^\circ$)','interpreter','latex')
 ylabel('$\theta_{23}$($^\circ$)','interpreter','latex')
 %title('Rate k (cm s$^{-1}$) Ruhex, Vapp=0.2 V','interpreter','latex')
-title('$k_{red} (\eta = 0.1)$','interpreter','latex')
-colormap(parula)
+title('$k_{ox} (\eta = 0.0)$','interpreter','latex')
+colormap(jet)
 view(2)
-saveas(gcf,'kred_0.1.png')
-savefig('kred_0.1.fig')
-%% Testing
-
-%[a,b] = unique(q12_list);
-%c = ismember(q12_list, a(2));
-%ids = find(c);
-%length(ids)
-
-% dos_tot for given angles
-[m,i]=min(abs(q12_list-1.23));
-[m,j]=min(abs(q23_list-5));
-theta12 = q12_list(i);
-theta23 = q23_list(j);
-f_name = append('dos_q12_',string(theta12),'_q23_',string(theta23),'_');
-for i=1:length(fd_list)
-    str = fd_list(i).name;
-    if contains(str, f_name)
-        load(append(dir0,str))
-        break
-    end
-end
-max(abs(dos_tot))
+saveas(gcf,'kred_0.0.png')
+savefig('kred_0.0.fig')
