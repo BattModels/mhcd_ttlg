@@ -70,7 +70,7 @@ v = dos_max;
 
 `k_aba = 2.632e-5` on line 44 of `sweep_dos.m` is the equilibrium rate constant `ko` for ABA (Bernal) stacked trilayer graphene. It is used as reference for other twist angle rates. For calculation of `k_aba` see repository [trilayer_stacked](https://github.com/mbabar09/trilayer_stacked).
 
-8. `/SI_fig3_data/` folder contains kinetic rate files at `η = 0.0` and `Eo = -0.07 V` for two reorganization energies `λ = 0.2 eV` and `λ = 1.2 eV`. These files can be loaded into `sweep_dos.m` to plot SI figure 3 color map. 
+8. `/SI_fig3_data/` folder contains kinetic rate files at `η = 0.0` and `Eo = -0.07 V` for two reorganization energies `λ = 0.2 eV` and `λ = 1.2 eV`. These files can be loaded into `sweep_dos.m` to plot SI figure 3. 
 
 
 ## Steps to reproduce data
