@@ -52,7 +52,7 @@ Hence `Eo = -0.25 - (-0.18) = -0.07 V` is used for Ruthenium Hexamine. The kinet
 
 Data for Figure 4 in paper is in `/Eo_var/0.3/` at equilibrium `k_data_1.0_λ_0.82_η_0.0.mat`.
 
-6. `sweep_dos.m` uses output `.mat` file to generate colormaps of k $_{red/ox}$ for given $A$ , $\lambda$ and $\eta$.
+6. `sweep_dos.m` is an analysis script that uses the rate file `.mat` to generate colormap of k $_{red/ox}$ or DOS with twist angles $\theta_{12}$ and $\theta_{23}$.
 
 Specify surface vector `v` in lines 38-42 to either `kox_list` for oxidation rates, `kred_list` for reduction rates or `dos_max` for maximum DOS values (Figure 2a) as shown below.
 
