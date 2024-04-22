@@ -73,3 +73,12 @@ v = dos_max;
 8. `/SI_fig3_data/` folder contains kinetic rate files at `η = 0.0` and `Eo = -0.07 V` for two reorganization energies `λ = 0.2 eV` and `λ = 1.2 eV`. These files can be loaded into `sweep_dos.m` to plot SI figure 3 color map. 
 
 
+## Steps to reproduce data
+
+1. Generate DOS data by following instructions in `/ttlg_dos/` repository. Data is stored in `/sweep/` folder.
+
+2. Calculate reference ABA trilayer graphene DOS and corresponding kinetic rates in `/trilayer_stacked/` repository. Use `k_aba` value in `sweep_dos.m` 
+
+3. Use `script.jl` or `eta_run_script.jl` files to generate kinetic rates in bulk for all twist angles (parallelized). 
+
+4. Input rate file and run `sweep_dos.m` to visualize rates in a color map with $\theta_{12}$ and $\theta_{23}$ as `x` and `y` axes respectively.
