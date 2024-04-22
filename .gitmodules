@@ -1,0 +1,6 @@
+[submodule "ttlg_dos"]
+	path = ttlg_dos
+	url = https://github.com/mbabar09/ttlg_dos.git
+[submodule "trilayer_stacked"]
+	path = trilayer_stacked
+	url = https://github.com/mbabar09/trilayer_stacked.git
