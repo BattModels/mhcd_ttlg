@@ -71,7 +71,7 @@ function compute_k_cq(
     return k_rate, V_q
 end
 
-# Modify string
+# Modify string -- helper function
 function chop_str(str::String)
          while str[length(str)] == '0'
                str = chop(str)
@@ -110,7 +110,6 @@ kT = 0.026 #eV
 
 kox_data = zeros(Float64, size(q12_list));
 kred_data = zeros(Float64, size(q12_list));
-factor = zeros(Float64, size(q12_list));
 
 for η in η_list
     print("\n","η = ",η,"\n")

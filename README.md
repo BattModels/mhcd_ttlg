@@ -35,7 +35,7 @@ The output file has a format: `k_data_{A}_λ_{}_η_{}.mat`. Run Julia files with
 > julia script.jl
 ```
 
-3. `eta_run_script.jl` runs `script.jl` at a range of eta values. 
+3. `eta_run_script.jl` runs `script.jl` at a range of eta values. Parallelized for HPC in `\Eo_var\` 
 
 The output mat file has a format: `k_data_{A}_λ_{}_η_{}.mat`.
 
@@ -43,8 +43,6 @@ The output mat file has a format: `k_data_{A}_λ_{}_η_{}.mat`.
 4. `/sweep/` folder contains the .mat DOS files of the tTLG system at a range of $\theta_{12}$ and $\theta_{23}$. 
 
 5. `/ttlg_dos/` repository contains data and instructions to generate twisted trilayer graphene DOS at a range of $\theta_{12}$ and $\theta_{23}$ (`1-5` degrees).
-
-6. `/Eo_var/` folder contains kinetic rates for a range of $\eta$ and $E_{o}$ (formal potential of redox couple wrt electrode).
 
 Formal potential of Ruthenium Hexamine, `E = -0.25 V` vs. Ag/AgCl electrode and reorg. energy `λ=0.82 eV` [Ref](https://www.nature.com/articles/s41557-021-00865-1).
 
@@ -57,6 +55,10 @@ Data for Figure 4 in paper is in `/Eo_var/0.3/` at equilibrium `k_data_1.0_λ_0.
 6. `/trilayer_stacked/` repository contains Bernal stacked (ABA) trilayer graphene DOS data and MHC-DOS kinetic rates. The ABA rates are used as reference for color maps in paper (Fig. 2a, Fig.4, SI Fig. 3). The rate value is specifed in `sweep_dos.m`. See `/trilayer_stacked/README.md` for instructions.
 
 7. `sweep_dos.m` is an analysis script that uses the rate file `.mat` to generate colormap of k $_{red/ox}$ or DOS with twist angles $\theta_{12}$ and $\theta_{23}$.
+
+8. `/Eo_var/` folder contains kinetic rates for a range of $\eta$ and $E_{o}$ (formal potential of redox couple wrt electrode). Also contains parallelized input `eta_run_script.jl` for calculation on 128 cores.
+
+9. `uncertainty.jl` and `uncertainty_par.jl` are input files for calculating uncertainty propagation from DOS. See section in supplementary information. The latter file is parallelized, whose output is stored in `/DOS_unc_files/` in format: `k_err_{A}_λ_{}_η_{}.mat`. Output files can be analyzed using `analyze_mat.jl`
 
 Specify surface vector `v` in lines 38-42 to either `kox_list` for oxidation rates, `kred_list` for reduction rates or `dos_max` for maximum DOS values (Figure 2a) as shown below.
 
