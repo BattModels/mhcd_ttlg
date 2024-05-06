@@ -29,7 +29,7 @@ q23 = read(file, "q23");
 
 unc_dir = "DOS_unc_files/"
 flist = glob(unc_dir*"k_err_"*"*")
-matfile = matopen(flist[6]) # Any file number
+matfile = matopen(flist[6]) # Any file number depending on eta
 kox_err = read(matfile, "kox_err")
 kred_err = read(matfile, "kred_err")
 q12_list = read(matfile, "q12_list")
