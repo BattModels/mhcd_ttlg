@@ -84,3 +84,5 @@ v = dos_max;
 3. Use `script.jl` or `eta_run_script.jl` files to generate kinetic rates in bulk for all twist angles (parallelized). 
 
 4. Input rate file and run `sweep_dos.m` to visualize rates in a color map with $\theta_{12}$ and $\theta_{23}$ as `x` and `y` axes respectively.
+
+[![DOI](https://zenodo.org/badge/793250737.svg)](https://zenodo.org/doi/10.5281/zenodo.11176225)
